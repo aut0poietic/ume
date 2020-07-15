@@ -1,8 +1,16 @@
+*, *:before, *:after {
+	box-sizing : border-box;
+}
+
+html {
+	font-size : 1px;
+}
+
 body {
 	font-family : 'Raleway', sans-serif;
-	font-size   : 1rem;
+	font-size   : 16rem;
 	margin      : 0;
-	padding     : 32px;
+	padding     : 32rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,22 +20,38 @@ h1, h2, h3, h4, h5, h6 {
 section.example {
 	position         : relative;
 	background-color : #f9f9f9;
-	border-top       : 1px solid #d9d9d9;
-	border-bottom    : 1px solid #d9d9d9;
-	padding          : 32px 64px;
-	margin           : 54px -32px 0 -32px;
+	border-top       : 1rem solid #d9d9d9;
+	border-bottom    : 1rem solid #d9d9d9;
+	padding          : 32rem;
+	margin           : 54rem -32rem 0 -32rem;
 }
 
 section.example:before {
-	content          : 'Example';
+	content          : attr(data-title);
 	position         : absolute;
-	top              : -22px;
+	top              : -22rem;
 	left             : 0;
-	padding          : 4px 8px 5px 8px;
-	font-size        : 12px;
-	line-height      : 12px;
-	border-top       : 1px solid #d9d9d9;
-	border-right     : 1px solid #d9d9d9;
+	padding          : 4rem 8rem 5rem 8rem;
+	font-size        : 12rem;
+	line-height      : 12rem;
+	border-top       : 1rem solid #d9d9d9;
+	border-right     : 1rem solid #d9d9d9;
 	color            : #727272;
 	background-color : #f9f9f9;
+}
+
+section.example ume-layout.example {
+	background-color : #fff;
+	box-shadow       : 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+section.example ume-layout.example ume-col.example {
+	box-shadow       : 0 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center  ;
+}
+
+code {
+	color   : #e21856;
+	border  : 1px solid rgba(226, 24, 86, 0.1);
+	padding : 2px 4px;
 }

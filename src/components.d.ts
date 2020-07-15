@@ -6,56 +6,130 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface UmeCol {
         /**
-          * The first name
+          * If true, will be hidden on mobile resolutions (under 640px).
          */
-        "first": string;
+        "hideMobile": boolean;
         /**
-          * The last name
+          * Size in grid units, 1 - 12.
          */
-        "last": string;
+        "size": number;
+    }
+    interface UmeImage {
         /**
-          * The middle name
+          * Alternative Text
          */
-        "middle": string;
+        "alt": string;
+        /**
+          * Should the image cover the full width of the image itself.
+         */
+        "cover": boolean;
+        /**
+          * Height of image in px or rem.
+         */
+        "height": number;
+        /**
+          * Opacity value; Integer 0 - 100.
+         */
+        "opacity": number;
+        /**
+          * Image source url.
+         */
+        "src": string;
+        /**
+          * Width of image in px or rem.
+         */
+        "width": number;
+    }
+    interface UmeLayout {
+        /**
+          * If `true` spans the full width of it's container.
+         */
+        "fluid": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLUmeColElement extends Components.UmeCol, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLUmeColElement: {
+        prototype: HTMLUmeColElement;
+        new (): HTMLUmeColElement;
+    };
+    interface HTMLUmeImageElement extends Components.UmeImage, HTMLStencilElement {
+    }
+    var HTMLUmeImageElement: {
+        prototype: HTMLUmeImageElement;
+        new (): HTMLUmeImageElement;
+    };
+    interface HTMLUmeLayoutElement extends Components.UmeLayout, HTMLStencilElement {
+    }
+    var HTMLUmeLayoutElement: {
+        prototype: HTMLUmeLayoutElement;
+        new (): HTMLUmeLayoutElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ume-col": HTMLUmeColElement;
+        "ume-image": HTMLUmeImageElement;
+        "ume-layout": HTMLUmeLayoutElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface UmeCol {
         /**
-          * The first name
+          * If true, will be hidden on mobile resolutions (under 640px).
          */
-        "first"?: string;
+        "hideMobile"?: boolean;
         /**
-          * The last name
+          * Size in grid units, 1 - 12.
          */
-        "last"?: string;
+        "size"?: number;
+    }
+    interface UmeImage {
         /**
-          * The middle name
+          * Alternative Text
          */
-        "middle"?: string;
+        "alt": string;
+        /**
+          * Should the image cover the full width of the image itself.
+         */
+        "cover"?: boolean;
+        /**
+          * Height of image in px or rem.
+         */
+        "height"?: number;
+        /**
+          * Opacity value; Integer 0 - 100.
+         */
+        "opacity"?: number;
+        /**
+          * Image source url.
+         */
+        "src": string;
+        /**
+          * Width of image in px or rem.
+         */
+        "width"?: number;
+    }
+    interface UmeLayout {
+        /**
+          * If `true` spans the full width of it's container.
+         */
+        "fluid"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "ume-col": UmeCol;
+        "ume-image": UmeImage;
+        "ume-layout": UmeLayout;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ume-col": LocalJSX.UmeCol & JSXBase.HTMLAttributes<HTMLUmeColElement>;
+            "ume-image": LocalJSX.UmeImage & JSXBase.HTMLAttributes<HTMLUmeImageElement>;
+            "ume-layout": LocalJSX.UmeLayout & JSXBase.HTMLAttributes<HTMLUmeLayoutElement>;
         }
     }
 }

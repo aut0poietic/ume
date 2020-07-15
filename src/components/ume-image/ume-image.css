@@ -1,0 +1,32 @@
+:host, .inner {
+  position  : relative;
+  display   : block;
+  max-width : 100%;
+}
+
+img {
+  display       : block;
+  max-width     : 100%;
+  object-fit    : cover;
+}
+
+img.fallback {
+  opacity : 0;
+}
+
+:host([cover]),
+:host([cover]) .inner ,
+:host([slot='background']),
+:host([slot='background']) .inner {
+  width           : 100%;
+  height          : 100%;
+  background-size : cover;
+  overflow        : hidden;
+}
+:host([cover]) img,
+:host([slot='background']) img {
+  width           : 100%;
+  height          : 100%;
+  background-size : cover;
+  overflow        : hidden;
+}
