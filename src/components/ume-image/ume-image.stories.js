@@ -15,8 +15,8 @@ export const Image = () => {
 		
 		<p>First, the image is a <em>block</em> element and will fill the width of it's container. This means that a source image that is larger than the containing element will be reduced to the size of the container while maintaining the appropriate aspect ratio.</p>
 		<section class="example" data-title="Large Image Source">
-			<ume-image src="https://source.unsplash.com/xH4wVOSNDB8" alt="A lightning strike at the forefront of a supercell thunderstorm."></ume-image> 
-		</section>
+			<ume-image src="https://source.unsplash.com/xH4wVOSNDB8/1920x933" alt="A lightning strike at the forefront of a supercell thunderstorm."></ume-image> 
+		</section>  
 		<p>Images that are smaller than the containing element will display at their actual size, but the Image component itself will occupy the full block area.</p>
 
 		<section class="example" data-title="Small Image Source">

@@ -6,6 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface UmeCard {
+        /**
+          * Height of the header in pixels
+         */
+        "headerSize": number;
+        /**
+          * Renders the card's elements on the horizontal axis rather than vertical
+         */
+        "horizontal": false;
+    }
     interface UmeCol {
         /**
           * If true, will be hidden on mobile resolutions (under 640px).
@@ -15,6 +25,16 @@ export namespace Components {
           * Size in grid units, 1 - 12.
          */
         "size": number;
+    }
+    interface UmeHeading {
+        /**
+          * Allows the tag to be displayed as different level while preserving the accessible heading structure.
+         */
+        "display": number;
+        /**
+          * Heading Level
+         */
+        "level": number;
     }
     interface UmeImage {
         /**
@@ -48,13 +68,33 @@ export namespace Components {
          */
         "fluid": boolean;
     }
+    interface UmeSpacer {
+        /**
+          * The height of the spacer in pixels.
+         */
+        "height": number;
+    }
+    interface UmeText {
+    }
 }
 declare global {
+    interface HTMLUmeCardElement extends Components.UmeCard, HTMLStencilElement {
+    }
+    var HTMLUmeCardElement: {
+        prototype: HTMLUmeCardElement;
+        new (): HTMLUmeCardElement;
+    };
     interface HTMLUmeColElement extends Components.UmeCol, HTMLStencilElement {
     }
     var HTMLUmeColElement: {
         prototype: HTMLUmeColElement;
         new (): HTMLUmeColElement;
+    };
+    interface HTMLUmeHeadingElement extends Components.UmeHeading, HTMLStencilElement {
+    }
+    var HTMLUmeHeadingElement: {
+        prototype: HTMLUmeHeadingElement;
+        new (): HTMLUmeHeadingElement;
     };
     interface HTMLUmeImageElement extends Components.UmeImage, HTMLStencilElement {
     }
@@ -68,13 +108,39 @@ declare global {
         prototype: HTMLUmeLayoutElement;
         new (): HTMLUmeLayoutElement;
     };
+    interface HTMLUmeSpacerElement extends Components.UmeSpacer, HTMLStencilElement {
+    }
+    var HTMLUmeSpacerElement: {
+        prototype: HTMLUmeSpacerElement;
+        new (): HTMLUmeSpacerElement;
+    };
+    interface HTMLUmeTextElement extends Components.UmeText, HTMLStencilElement {
+    }
+    var HTMLUmeTextElement: {
+        prototype: HTMLUmeTextElement;
+        new (): HTMLUmeTextElement;
+    };
     interface HTMLElementTagNameMap {
+        "ume-card": HTMLUmeCardElement;
         "ume-col": HTMLUmeColElement;
+        "ume-heading": HTMLUmeHeadingElement;
         "ume-image": HTMLUmeImageElement;
         "ume-layout": HTMLUmeLayoutElement;
+        "ume-spacer": HTMLUmeSpacerElement;
+        "ume-text": HTMLUmeTextElement;
     }
 }
 declare namespace LocalJSX {
+    interface UmeCard {
+        /**
+          * Height of the header in pixels
+         */
+        "headerSize"?: number;
+        /**
+          * Renders the card's elements on the horizontal axis rather than vertical
+         */
+        "horizontal"?: false;
+    }
     interface UmeCol {
         /**
           * If true, will be hidden on mobile resolutions (under 640px).
@@ -84,6 +150,16 @@ declare namespace LocalJSX {
           * Size in grid units, 1 - 12.
          */
         "size"?: number;
+    }
+    interface UmeHeading {
+        /**
+          * Allows the tag to be displayed as different level while preserving the accessible heading structure.
+         */
+        "display"?: number;
+        /**
+          * Heading Level
+         */
+        "level"?: number;
     }
     interface UmeImage {
         /**
@@ -117,19 +193,35 @@ declare namespace LocalJSX {
          */
         "fluid"?: boolean;
     }
+    interface UmeSpacer {
+        /**
+          * The height of the spacer in pixels.
+         */
+        "height"?: number;
+    }
+    interface UmeText {
+    }
     interface IntrinsicElements {
+        "ume-card": UmeCard;
         "ume-col": UmeCol;
+        "ume-heading": UmeHeading;
         "ume-image": UmeImage;
         "ume-layout": UmeLayout;
+        "ume-spacer": UmeSpacer;
+        "ume-text": UmeText;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ume-card": LocalJSX.UmeCard & JSXBase.HTMLAttributes<HTMLUmeCardElement>;
             "ume-col": LocalJSX.UmeCol & JSXBase.HTMLAttributes<HTMLUmeColElement>;
+            "ume-heading": LocalJSX.UmeHeading & JSXBase.HTMLAttributes<HTMLUmeHeadingElement>;
             "ume-image": LocalJSX.UmeImage & JSXBase.HTMLAttributes<HTMLUmeImageElement>;
             "ume-layout": LocalJSX.UmeLayout & JSXBase.HTMLAttributes<HTMLUmeLayoutElement>;
+            "ume-spacer": LocalJSX.UmeSpacer & JSXBase.HTMLAttributes<HTMLUmeSpacerElement>;
+            "ume-text": LocalJSX.UmeText & JSXBase.HTMLAttributes<HTMLUmeTextElement>;
         }
     }
 }

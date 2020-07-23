@@ -17,7 +17,7 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "npm-run-all --parallel stencil storybook",
-    "stencil": "stencil build --dev --watch",
+    "stencil": "stencil build --dev --docs --watch",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
@@ -31,6 +31,7 @@
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-notes": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
     "@storybook/web-components": "^5.3.19",
     "babel-loader": "^8.1.0",
     "lit-html": "^1.2.1",

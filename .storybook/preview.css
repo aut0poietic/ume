@@ -1,3 +1,8 @@
+:root {
+	--ume-base      : 16rem;
+	--ume-base-half : 8rem;
+}
+
 *, *:before, *:after {
 	box-sizing : border-box;
 }
@@ -23,7 +28,7 @@ section.example {
 	border-top       : 1rem solid #d9d9d9;
 	border-bottom    : 1rem solid #d9d9d9;
 	padding          : 32rem;
-	margin           : 54rem -32rem 0 -32rem;
+	margin           : 54rem -32rem 16rem -32rem;
 }
 
 section.example:before {
@@ -46,8 +51,13 @@ section.example ume-layout.example {
 }
 
 section.example ume-layout.example ume-col.example {
-	box-shadow       : 0 0 1px rgba(0, 0, 0, 0.1);
-	text-align: center  ;
+	box-shadow : 0 0 1px rgba(0, 0, 0, 0.1);
+	text-align : center;
+}
+
+p {
+	margin         : 0;
+	padding-bottom : 16px;
 }
 
 code {

@@ -1,0 +1,43 @@
+:host {
+	display              : block;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	line-height : 1.45;
+	margin      : 0;
+	padding     : 0 0 var(--ume-base-half, 8rem) 0;
+}
+
+h1,
+.h1 {
+	font-size : calc(var(--ume-base, 16rem) * 2);
+}
+
+h2,
+.h2 {
+	font-size : calc(var(--ume-base, 16rem) * 1.75);
+}
+
+h3,
+.h3 {
+	font-size : calc(var(--ume-base, 16rem) * 1.5);
+}
+
+h4,
+.h4 {
+	font-size : calc(var(--ume-base, 16rem) * 1.25);
+}
+
+h5,
+.h5 {
+	font-size : calc(var(--ume-base, 16rem) * 1.125);
+}
+
+h6,
+.h6 {
+	font-size : var(--ume-base, 16rem);
+}

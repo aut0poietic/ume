@@ -1,0 +1,39 @@
+:host {
+	display        : flex;
+	flex-direction : column;
+	border         : 1px solid #333;
+}
+
+:host([horizontal]) {
+	flex-direction : row;
+	align-items    : stretch;
+}
+
+.header {
+	position    : relative;
+	flex-shrink : 0;
+	flex-grow   : 0;
+	padding     : var(--ume-base, 16rem);
+}
+
+.header ::slotted(*) {
+	position : relative;
+	z-index  : 1;
+}
+
+.header ::slotted(ume-image) {
+	position : absolute;
+	top      : 0;
+	left     : 0;
+	z-index  : -1;
+}
+
+.content {
+	flex-grow : 1;
+	padding   : var(--ume-base, 16rem);
+}
+
+.content ::slotted(*:last-child) {
+	padding-bottom : 0;
+}
+
